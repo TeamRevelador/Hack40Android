@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    android:layout_margin="2dp"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/monument_circle_image_view"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/profile_icon"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monument_city_button" />
+
+        <TextView
+            android:id="@+id/monument_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/berkshire_swash"
+            android:text="city_name"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/monument_circle_image_view"
+            app:layout_constraintStart_toStartOf="@id/monument_circle_image_view"
+            app:layout_constraintTop_toBottomOf="@id/monument_circle_image_view" />
+
+
+        <TextView
+            android:id="@+id/monument_description_text_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="serif"
+            android:isScrollContainer="true"
+            android:text="@string/lorem_ipsum_text"
+            app:layout_constraintBottom_toBottomOf="@id/monument_circle_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/monument_circle_image_view"
+            app:layout_constraintTop_toTopOf="@id/monument_circle_image_view" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/monument_rating_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
+            android:minHeight="15dp"
+            android:focusable="false"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            app:layout_constraintTop_toBottomOf="@id/monument_name_text_view"
+            app:layout_constraintStart_toStartOf="@id/monument_name_text_view"
+            app:layout_constraintEnd_toEndOf="@id/monument_name_text_view"/>
+
+        <TextView
+            android:id="@+id/monument_rating_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/monument_rating_bar"
+            app:layout_constraintEnd_toEndOf="@id/monument_rating_bar"
+            app:layout_constraintStart_toStartOf="@id/monument_rating_bar"
+            android:text="3.6/5"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/monument_visits_text_view"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="visits this month"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@id/monument_name_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/monument_name_text_view"
+            />
+
+        <TextView
+            android:id="@+id/monument_distance_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="distance from your location"
+            app:layout_constraintTop_toTopOf="@id/monument_name_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@id/monument_visits_text_view"/>
+
+        <Button
+            android:id="@+id/monument_city_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monument_name"
+            android:fontFamily="@font/berkshire_swash"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:background="@color/toolbar_title_color"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="3dp"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v7.widget.CardView>

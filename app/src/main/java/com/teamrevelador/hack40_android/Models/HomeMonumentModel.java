@@ -1,4 +1,4 @@
-package com.teamrevelador.hack40_android;
+package com.teamrevelador.hack40_android.Models;
 
 import java.io.Serializable;
 

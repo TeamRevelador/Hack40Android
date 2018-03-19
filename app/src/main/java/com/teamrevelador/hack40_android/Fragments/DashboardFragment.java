@@ -1,4 +1,4 @@
-package com.teamrevelador.hack40_android;
+package com.teamrevelador.hack40_android.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,4 +1,4 @@
-package com.teamrevelador.hack40_android;
+package com.teamrevelador.hack40_android.Activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.teamrevelador.hack40_android.R;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

@@ -1,4 +1,4 @@
-package com.teamrevelador.hack40_android;
+package com.teamrevelador.hack40_android.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.teamrevelador.hack40_android.R;
 
 /**
  * Created by anubhavmalik on 19/03/18.

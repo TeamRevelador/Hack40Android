@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
@@ -19,7 +19,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name="SplashScreen"
+            android:name=".Activities.SplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/FullscreenTheme">

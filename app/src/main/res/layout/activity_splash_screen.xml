@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/toolbar_title_color"
-    tools:context="com.teamrevelador.hack40_android.SplashScreen">
+    tools:context="com.teamrevelador.hack40_android.Activities.SplashScreen">
 
     <TextView
         android:id="@+id/fullscreen_content"

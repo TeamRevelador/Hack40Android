@@ -1,4 +1,4 @@
-package com.teamrevelador.hack40_android;
+package com.teamrevelador.hack40_android.Activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.flipboard.bottomsheet.BottomSheetLayout;
+import com.teamrevelador.hack40_android.Fragments.HomeFragment;
+import com.teamrevelador.hack40_android.Fragments.ProfileFragment;
+import com.teamrevelador.hack40_android.R;
 
 public class MainActivity extends AppCompatActivity {
 

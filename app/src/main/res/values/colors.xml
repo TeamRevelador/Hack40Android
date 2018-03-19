@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#eeeeee</color>
-    <color name="colorPrimaryDark">#f4eeee</color>
+    <color name="colorPrimary">#f50057</color>
+    <color name="colorPrimaryDark">#d81b60</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="toolbar_title_color">#afb42b</color>
+    <color name="colorBackgroundColor">#e0e0e0</color>
+    <color name="toolbar_title_color">#f50057</color>
 
     <color name="black_overlay">#66000000</color>
 </resources>

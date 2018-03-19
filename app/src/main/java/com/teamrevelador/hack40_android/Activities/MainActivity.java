@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.flipboard.bottomsheet.BottomSheetLayout;
+import com.teamrevelador.hack40_android.Fragments.AboutFragment;
 import com.teamrevelador.hack40_android.Fragments.HomeFragment;
 import com.teamrevelador.hack40_android.Fragments.ProfileFragment;
 import com.teamrevelador.hack40_android.R;
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     setFragment(new HomeFragment());
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_about:
+                    setFragment(new AboutFragment());
                     return true;
                 case R.id.navigation_profile:
                     setFragment(new ProfileFragment());

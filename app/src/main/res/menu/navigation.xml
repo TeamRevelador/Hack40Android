@@ -6,14 +6,15 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
-    <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
 
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/profile_icon"
         android:title="@string/title_profile" />
 
+
+    <item
+        android:id="@+id/navigation_about"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_about" />
 </menu>

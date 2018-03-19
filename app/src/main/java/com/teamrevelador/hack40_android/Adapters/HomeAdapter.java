@@ -42,7 +42,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         holder.monumentItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "Helo "+position, Toast.LENGTH_SHORT).show(); //TODO: add code to show the bottomsheet here and networking ka code bhi idhr hi ayega wo main kr dunga bad mein
+                Toast.makeText(mContext, "Helo " + position, Toast.LENGTH_SHORT).show();
+//                TODO :  add code to show the bottomsheet here and networking ka code bhi idhr hi ayega wo main kr dunga bad mein
             }
         });
         holder.monumentVisitsTextView.setText(arrayList.get(position).getMonumentVisits());
@@ -51,7 +52,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         holder.monumentRatingBar.setNumStars(Integer.parseInt(arrayList.get(position).getMonumentRatingText()));
         holder.monumentDescriptionTextView.setText(arrayList.get(position).getMonumentDescription());
 //        holder.monumentCircleImageView.setText(arrayList.get(position).getMonumentVisits());
-//        holder.monumentVisitsTextView.setText(arrayList.get(position).getMonumentVisits()); TODO: Calculate the distance from current loc
+//        holder.monumentVisitsTextView.setText(arrayList.get(position).getMonumentVisits());TODO: Calculate the distance from current loc
 
 
     }

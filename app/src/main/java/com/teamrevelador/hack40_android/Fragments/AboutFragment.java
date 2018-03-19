@@ -11,7 +11,7 @@ import android.view.ViewGroup;
  * Created by anubhavmalik on 19/03/18.
  */
 
-public class DashboardFragment extends Fragment {
+public class AboutFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

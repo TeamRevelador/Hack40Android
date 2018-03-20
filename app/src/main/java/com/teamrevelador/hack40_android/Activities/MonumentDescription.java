@@ -46,6 +46,25 @@ public class MonumentDescription extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String monumentName = bundle.getString("monumentName");
+         String latitude=bundle.getString("latitude");
+         String longitude=bundle.getString("longitude");
+         String description=bundle.getString("description");
+         String photo=bundle.getString("photoUrl");
+         String rating=bundle.getString("rating");
+         String visits=bundle.getString("visits");
+         String fact1=bundle.getString("fact1");
+         String fact2=bundle.getString("fact2");
+         String fact3=bundle.getString("fact3");
+         String fact4=bundle.getString("fact4");
+         String fact5=bundle.getString("fact5");
+         String fact6=bundle.getString("fact6");
+         String fact7=bundle.getString("fact7");
+         String fact8=bundle.getString("fact8");
+         String fact9=bundle.getString("fact9");
+         String fact10=bundle.getString("fact10");
+
+
+
 
     }
 }

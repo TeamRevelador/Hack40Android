@@ -131,12 +131,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <Button
-        android:id="@+id/btf1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
 </android.support.constraint.ConstraintLayout>

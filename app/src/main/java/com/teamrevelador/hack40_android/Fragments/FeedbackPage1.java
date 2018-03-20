@@ -36,17 +36,6 @@ public class FeedbackPage1 extends AppCompatActivity {
         }
 
 
-    Button bo = findViewById(R.id.btf1);
-        bo.setOnClickListener(new View.OnClickListener()
-
-    {
-        @Override
-        public void onClick (View view){
-        Intent intent = new Intent(FeedbackPage1.this, FeedbackPage2.class);
-        startActivity(intent);
-
-    }
-    });
 
     }}
 

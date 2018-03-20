@@ -1,6 +1,8 @@
 package com.teamrevelador.hack40_android.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.teamrevelador.hack40_android.Activities.MonumentDescription;
 import com.teamrevelador.hack40_android.Models.HomeMonumentModel;
 import com.teamrevelador.hack40_android.R;
 import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
@@ -30,6 +33,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     public HomeAdapter(Context mContext, ArrayList<HomeMonumentResponse> arrayList) {
         this.mContext = mContext;
         this.arrayList = arrayList;
+
     }
 
     @Override
@@ -44,6 +48,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, "Helo " + position, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, MonumentDescription.class);
+mContext.startActivity(intent);
 //                TODO :  add code to show the bottomsheet here and networking ka code bhi idhr hi ayega wo main kr dunga bad mein
             }
         });

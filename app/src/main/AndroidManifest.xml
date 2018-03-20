@@ -30,20 +30,20 @@
             android:name=".Activities.SplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
-            android:theme="@style/FullscreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/FullscreenTheme"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
         </activity>
         <activity
             android:name=".Activities.SignUpActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
-        <activity android:name=".Fragments.FeedbackPage1"/>
-        <activity android:name=".Fragments.FeedbackPage2"/>
+        <activity android:name=".Fragments.FeedbackPage1">  </activity>
+        <activity android:name=".Activities.MonumentDescription"/>
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <EditText
-        android:id="@+id/et_place_visited"
+        android:id="@+id/et_place_visited3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingBar3"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="9dp"
@@ -27,10 +27,10 @@
         android:numStars="5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_place_visited" />
+        app:layout_constraintTop_toBottomOf="@+id/et_place_visited3" />
 
     <EditText
-        android:id="@+id/et_feedback"
+        android:id="@+id/et_feedback3"
         android:hint="feedback (optional)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar3" />
 
     <View
         android:layout_width="wrap_content"
@@ -47,6 +47,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_feedback" />
+        app:layout_constraintTop_toBottomOf="@+id/et_feedback3" />
 
 </android.support.constraint.ConstraintLayout>

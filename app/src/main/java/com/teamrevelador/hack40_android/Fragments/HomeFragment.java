@@ -68,6 +68,8 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
                             Log.d("TAG",homeMonumentResponse.getDescription());
                         }
                         progressDialog.dismiss();
+                        homeAdapter.notifyDataSetChanged();
+
                     }
 
                     @Override

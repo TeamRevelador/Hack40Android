@@ -1,8 +1,8 @@
 package com.teamrevelador.hack40_android.Activities;
 
 import android.content.Intent;
-import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -22,13 +22,6 @@ import com.teamrevelador.hack40_android.Fragments.FeedbackPage1;
 import com.teamrevelador.hack40_android.Fragments.HomeFragment;
 import com.teamrevelador.hack40_android.Fragments.ProfileFragment;
 import com.teamrevelador.hack40_android.R;
-import com.teamrevelador.hack40_android.Retrofit.ApiClient;
-import com.teamrevelador.hack40_android.Retrofit.ApiInterface;
-import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView toolbarText;
     FragmentManager fragmentManager;
+    boolean backTappedOnce = false;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -70,9 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
         navigation.setSelectedItemId(R.id.navigation_home);
 
-        bottomSheet = findViewById(R.id.bottomsheet);
+//        bottomSheet = findViewById(R.id.bottomsheet);
         toolbarText = toolbar.findViewById(R.id.main_toolbar_text);
-
 //        b.setOnClickListener(new View.OnClickListener()
 //
 //        {
@@ -85,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                  bottomSheetDialog.show();*/
 
-        View parentView = getLayoutInflater().inflate(R.layout.monument_collapsing, null);
-        bottomSheet.showWithSheetView(LayoutInflater
-                .from(getBaseContext())
-                .inflate(R.layout.monument_collapsing, bottomSheet, false));
-
-        bottomSheet.dismissSheet();
+//        View parentView = getLayoutInflater().inflate(R.layout.monument_collapsing, null);
+//        bottomSheet.showWithSheetView(LayoutInflater
+//                .from(getBaseContext())
+//                .inflate(R.layout.monument_collapsing, bottomSheet, false));
+//
+//        bottomSheet.dismissSheet();
 
 //        Toolbar toolbar = parentView.findViewById(R.id.toolbar);
 
@@ -102,16 +95,17 @@ public class MainActivity extends AppCompatActivity {
         //            }
         //        });
 
-        Button button=findViewById(R.id.bb);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this, FeedbackPage1.class);
-                startActivity(intent);
-
-            }
-        });
-
+//        Button button = findViewById(R.id.bb);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, FeedbackPage1.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//
+//    }
     }
 
     private void setFragment(Fragment fragment) {
@@ -129,9 +123,26 @@ public class MainActivity extends AppCompatActivity {
             fragmentManager.beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .replace(R.id.main_container, fragment, "Main")
-                    .addToBackStack("Main")
+//                    .addToBackStack("Main")
                     .commit();
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Handler handler = new Handler();
+
+        if(backTappedOnce)
+            finish();
+
+        backTappedOnce = true;
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                backTappedOnce = false;
+            }
+        }, 2000);
+    }
 }

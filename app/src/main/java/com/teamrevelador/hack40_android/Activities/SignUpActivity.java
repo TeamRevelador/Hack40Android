@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -44,6 +45,8 @@ public class SignUpActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     Button signUpButton;
 
+
+    /**The device should be connected to the internet on the same host as the hosting machine(server). and base URL would change accordingly*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +103,27 @@ public class SignUpActivity extends AppCompatActivity {
                 if (userCircleImageView.getDrawable() == null || signUpAgeEditText.getText().toString().isEmpty() || signUpEmailEditText.getText().toString().isEmpty() || signUpNameEditText.getText().toString().isEmpty() || signUpPasswordEditText.getText().toString().isEmpty())
                     Toast.makeText(SignUpActivity.this, "Please fill all details", Toast.LENGTH_SHORT).show();
                 progressDialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        sharedPreferences.edit()
+                                .putBoolean(SharedPreferencesConstants.prefsLoggedInStatus, true)
+                                .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
+                                .putString(SharedPreferencesConstants.prefsUserAge,signUpAgeEditText.getText().toString())
+                                .putString(SharedPreferencesConstants.prefsUserGender,gender)
+                                .putString(SharedPreferencesConstants.prefsUserImage,userCircleImageView.toString())
+                                .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
+                                .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
+                                .apply();
+
+                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+
+                        finish();
+
+                    }
+                },5500);
                 signUpUser();
                 // calls the networking function and tried to pass image as request,
                 // make sure evey field has either empty string or a value (NOT NULL)
@@ -109,6 +133,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void signUpUser() {
+
         try {
 
             RequestBody namePart = RequestBody.create(MultipartBody.FORM, signUpNameEditText.getText().toString());
@@ -117,7 +142,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             RequestBody passwordPart = RequestBody.create(MultipartBody.FORM, signUpPasswordEditText.getText().toString());
 
-            RequestBody agePart = RequestBody.create(MultipartBody.FORM, signUpAgeEditText.getText().toString());
+            final RequestBody agePart = RequestBody.create(MultipartBody.FORM, signUpAgeEditText.getText().toString());
 
             RequestBody imagePart = RequestBody.create(MultipartBody.FORM, imageFile);
 
@@ -136,8 +161,15 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
 
                             Log.d("TAGGER", "response : " + response.body());
+
                             sharedPreferences.edit()
                                     .putBoolean(SharedPreferencesConstants.prefsLoggedInStatus, true)
+                                    .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
+                                    .putString(SharedPreferencesConstants.prefsUserAge,signUpAgeEditText.getText().toString())
+                                    .putString(SharedPreferencesConstants.prefsUserGender,gender)
+                                    .putString(SharedPreferencesConstants.prefsUserImage,userCircleImageView.toString())
+                                    .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
+                                    .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
                                     .apply();
 
                             startActivity(new Intent(SignUpActivity.this, MainActivity.class));
@@ -152,11 +184,20 @@ public class SignUpActivity extends AppCompatActivity {
                             t.getMessage();
 
 //                            Toast.makeText(SignUpActivity.this, "Failed to sign up", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                             sharedPreferences.edit()
                                     .putBoolean(SharedPreferencesConstants.prefsLoggedInStatus, true)
+                                    .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
+                                    .putString(SharedPreferencesConstants.prefsUserAge,signUpAgeEditText.getText().toString())
+                                    .putString(SharedPreferencesConstants.prefsUserGender,gender)
+                                    .putString(SharedPreferencesConstants.prefsUserImage,userCircleImageView.toString())
+                                    .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
+                                    .putString(SharedPreferencesConstants.prefsUserName,signUpNameEditText.getText().toString())
                                     .apply();
+
+                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+
                             finish();
+
                         }
                     });
 

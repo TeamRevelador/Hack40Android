@@ -1,10 +1,11 @@
-package com.teamrevelador.hack40_android.Fragments;
+package com.teamrevelador.hack40_android.Activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -50,6 +51,14 @@ public class FeedbackPage1 extends AppCompatActivity {
 //        rl.addView(v2,lp);
 //    }
 //});
+
+
+
+
+//        LayoutInflater layoutInflater=getLayoutInflater();
+//        View v=layoutInflater.inflate(R.layout.feedback_dynamic_rating,null);
+//        ViewGroup main= findViewById(R.id.scroll_dynamic_container);
+//        main.addView(v,0);
 
 
 

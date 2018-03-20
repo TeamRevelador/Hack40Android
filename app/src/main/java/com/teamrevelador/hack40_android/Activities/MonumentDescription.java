@@ -44,5 +44,9 @@ public class MonumentDescription extends AppCompatActivity {
         facte9 = findViewById(R.id.fact9);
         facte10 = findViewById(R.id.fact10);
 
+        Bundle bundle = getIntent().getExtras();
+        String monumentName = bundle.getString("monumentName");
+        String
+
     }
 }

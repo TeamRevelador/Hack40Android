@@ -1,5 +1,6 @@
 package com.teamrevelador.hack40_android.Fragments;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,9 +20,16 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.teamrevelador.hack40_android.Adapters.HomeAdapter;
 import com.teamrevelador.hack40_android.Models.HomeMonumentModel;
 import com.teamrevelador.hack40_android.R;
+import com.teamrevelador.hack40_android.Retrofit.ApiClient;
+import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by anubhavmalik on 19/03/18.
@@ -31,7 +39,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
     RecyclerView recyclerView;
     HomeAdapter homeAdapter;
-    ArrayList<HomeMonumentModel> arrayList = new ArrayList<>();
+    ArrayList<HomeMonumentResponse> arrayList = new ArrayList<>();
     SliderLayout mSliderLayout;
 
     @Nullable
@@ -41,7 +49,34 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
         mSliderLayout = (SliderLayout) view.findViewById(R.id.home_fragment_slider);
 
-        HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
+
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setCancelable(true);
+        progressDialog.setMessage("Fetching most rated monuments");
+        progressDialog.setTitle("Please wait");
+        progressDialog.show();
+
+        ApiClient apiClient = new ApiClient();
+
+        apiClient.getApiInterface()
+                .getHomeMonuments("1")
+                .enqueue(new Callback<List<HomeMonumentResponse>>() {
+                    @Override
+                    public void onResponse(Call<List<HomeMonumentResponse>> call, Response<List<HomeMonumentResponse>> response) {
+                        for(HomeMonumentResponse homeMonumentResponse : response.body()) {
+                            arrayList.add(homeMonumentResponse);
+                            Log.d("TAG",homeMonumentResponse.getDescription());
+                        }
+                        progressDialog.dismiss();
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<HomeMonumentResponse>> call, Throwable t) {
+
+                    }
+                });
+
+                HashMap < String, Integer > file_maps = new HashMap<String, Integer>();
         file_maps.put("Amber Fort", R.drawable.amber_fort);
         file_maps.put("Amer Fort", R.drawable.amer_palace_jaipur);
         file_maps.put("Jaigarh", R.drawable.jaigarh_image);
@@ -67,10 +102,10 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         mSliderLayout.setCustomAnimation(new DescriptionAnimation());
         mSliderLayout.setDuration(4000);
 
-
-        for (int i = 0; i < 10; i++) {
-            arrayList.add(new HomeMonumentModel("Monument " + i, "Visits " + i, "Distance is " + i, "4", "Description " + i, "URL " + i));
-        }
+//
+//        for (int i = 0; i < 10; i++) {
+//            arrayList.add(new HomeMonumentModel("Monument " + i, "Visits " + i, "Distance is " + i, "4", "Description " + i, "URL " + i));
+//        }
 
 //        this.monumentName = monumentName;
 //        this.monumentVisits = monumentVisits;

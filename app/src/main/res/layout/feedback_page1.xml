@@ -366,7 +366,7 @@
 
 
     <Button
-        android:id="@+id/buttom"
+        android:id="@+id/button"
         android:background="@color/toolbar_title_color"
         android:textSize="20dp"
         android:textColor="#fff"

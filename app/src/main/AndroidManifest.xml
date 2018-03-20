@@ -35,6 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Fragments.FeedbackPage1"/>
+        <activity android:name=".Fragments.FeedbackPage2"/>
     </application>
 
 </manifest>

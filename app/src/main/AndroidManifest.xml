@@ -13,10 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity
             android:name=".Activities.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
@@ -26,7 +29,6 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/FullscreenTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,6 +40,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
+        <activity android:name=".Fragments.FeedbackPage1"/>
+        <activity android:name=".Fragments.FeedbackPage2"/>
     </application>
 
 </manifest>

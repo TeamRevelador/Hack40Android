@@ -40,6 +40,10 @@
                     android:textColor="@color/toolbar_title_color"
                     android:textSize="30sp"
                     android:textStyle="bold" />
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/bb"/>
 
             </android.support.v7.widget.Toolbar>
 

@@ -23,6 +23,7 @@ import com.teamrevelador.hack40_android.Models.HomeMonumentModel;
 import com.teamrevelador.hack40_android.R;
 import com.teamrevelador.hack40_android.Retrofit.ApiClient;
 import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
+import com.teamrevelador.hack40_android.Retrofit.Responses.SignUpResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -137,6 +138,8 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
         homeAdapter.notifyDataSetChanged();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
 
         return view;
     }

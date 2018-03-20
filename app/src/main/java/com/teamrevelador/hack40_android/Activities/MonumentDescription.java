@@ -46,7 +46,6 @@ public class MonumentDescription extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String monumentName = bundle.getString("monumentName");
-        String
 
     }
 }

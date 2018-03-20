@@ -17,11 +17,13 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.google.gson.annotations.SerializedName;
 import com.teamrevelador.hack40_android.Adapters.HomeAdapter;
 import com.teamrevelador.hack40_android.Models.HomeMonumentModel;
 import com.teamrevelador.hack40_android.R;
 import com.teamrevelador.hack40_android.Retrofit.ApiClient;
 import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
+import com.teamrevelador.hack40_android.Retrofit.Responses.SignUpResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,6 +57,12 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         progressDialog.setMessage("Fetching most rated monuments");
         progressDialog.setTitle("Please wait");
         progressDialog.show();
+
+
+//        for(int i =0;i<10;i++)
+//            arrayList.add(new HomeMonumentResponse("name" + i, "lat" + i, "lng" + i, "desc" + i, "photo" + i, "4", "visit" + i, "fact" + i, "fact" + i, "fact" + i, "fact" + i, "fact" + i, "fact" + i, "fact" + i, "fact" + i, "fact" + i, "fact" + i));
+
+
 
         ApiClient apiClient = new ApiClient();
 
@@ -130,6 +138,8 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
         homeAdapter.notifyDataSetChanged();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
 
         return view;
     }

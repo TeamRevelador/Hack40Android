@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
@@ -29,7 +30,6 @@ import android.widget.Toast;
 
 import com.flipboard.bottomsheet.BottomSheetLayout;
 import com.teamrevelador.hack40_android.Fragments.AboutFragment;
-import com.teamrevelador.hack40_android.Fragments.FeedbackPage1;
 import com.teamrevelador.hack40_android.Fragments.HomeFragment;
 import com.teamrevelador.hack40_android.Fragments.ProfileFragment;
 import com.teamrevelador.hack40_android.R;
@@ -43,7 +43,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    BottomSheetLayout bottomSheet;
     Toolbar toolbar;
     TextView toolbarText;
     FragmentManager fragmentManager;

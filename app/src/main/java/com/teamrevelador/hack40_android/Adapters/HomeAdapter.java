@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.teamrevelador.hack40_android.Activities.MonumentDescription;
+import com.teamrevelador.hack40_android.Activities.SignUpActivity;
 import com.teamrevelador.hack40_android.Models.HomeMonumentModel;
 import com.teamrevelador.hack40_android.R;
 import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;

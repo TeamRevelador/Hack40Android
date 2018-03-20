@@ -1,5 +1,6 @@
 package com.teamrevelador.hack40_android.Activities;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -18,6 +19,13 @@ import com.teamrevelador.hack40_android.Fragments.AboutFragment;
 import com.teamrevelador.hack40_android.Fragments.HomeFragment;
 import com.teamrevelador.hack40_android.Fragments.ProfileFragment;
 import com.teamrevelador.hack40_android.R;
+import com.teamrevelador.hack40_android.Retrofit.ApiClient;
+import com.teamrevelador.hack40_android.Retrofit.ApiInterface;
+import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomSheet = findViewById(R.id.bottomsheet);
         toolbarText = toolbar.findViewById(R.id.main_toolbar_text);
+
 
 //        b.setOnClickListener(new View.OnClickListener()
 //

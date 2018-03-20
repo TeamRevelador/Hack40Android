@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.teamrevelador.hack40_android.Models.HomeMonumentModel;
 import com.teamrevelador.hack40_android.R;
+import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
 
 import java.util.ArrayList;
 
@@ -24,9 +25,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
 
     private Context mContext;
-    private ArrayList<HomeMonumentModel> arrayList;
+    private ArrayList<HomeMonumentResponse> arrayList;
 
-    public HomeAdapter(Context mContext, ArrayList<HomeMonumentModel> arrayList) {
+    public HomeAdapter(Context mContext, ArrayList<HomeMonumentResponse> arrayList) {
         this.mContext = mContext;
         this.arrayList = arrayList;
     }
@@ -46,11 +47,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 //                TODO :  add code to show the bottomsheet here and networking ka code bhi idhr hi ayega wo main kr dunga bad mein
             }
         });
-        holder.monumentVisitsTextView.setText(arrayList.get(position).getMonumentVisits());
-        holder.monumentRatingTextView.setText(arrayList.get(position).getMonumentRatingText());
-        holder.monumentNameTextView.setText(arrayList.get(position).getMonumentName());
-        holder.monumentRatingBar.setNumStars(Integer.parseInt(arrayList.get(position).getMonumentRatingText()));
-        holder.monumentDescriptionTextView.setText(arrayList.get(position).getMonumentDescription());
+        holder.monumentVisitsTextView.setText(arrayList.get(position).getVisits());
+        holder.monumentRatingTextView.setText(arrayList.get(position).getRating());
+        holder.monumentNameTextView.setText(arrayList.get(position).getName());
+        holder.monumentRatingBar.setNumStars(Integer.parseInt(arrayList.get(position).getRating()));
+        holder.monumentDescriptionTextView.setText(arrayList.get(position).getDescription());
 //        holder.monumentCircleImageView.setText(arrayList.get(position).getMonumentVisits());
 //        holder.monumentVisitsTextView.setText(arrayList.get(position).getMonumentVisits());TODO: Calculate the distance from current loc
 

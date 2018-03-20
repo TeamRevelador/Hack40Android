@@ -1,6 +1,5 @@
 package com.teamrevelador.hack40_android.Adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.teamrevelador.hack40_android.Activities.MonumentDescription;
-import com.teamrevelador.hack40_android.Activities.SignUpActivity;
-import com.teamrevelador.hack40_android.Models.HomeMonumentModel;
 import com.teamrevelador.hack40_android.R;
 import com.teamrevelador.hack40_android.Retrofit.Responses.HomeMonumentResponse;
 
@@ -50,46 +48,45 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, "Helo " + position, Toast.LENGTH_SHORT).show();
-             String Monumentname=  arrayList.get(position).getName();
-             String lati=arrayList.get(position).getLatitude();
-             String loni=arrayList.get(position).getLongitude();
-             String descrip=arrayList.get(position).getDescription();
-             String photo=arrayList.get(position).getPhoto();
-             String rat=arrayList.get(position).getRating();
-             String ftaco1=arrayList.get(position).getFact1();
-                String ftaco2=arrayList.get(position).getFact2();
-                String ftaco3=arrayList.get(position).getFact3();
-                String ftaco4=arrayList.get(position).getFact4();
-                String ftaco5=arrayList.get(position).getFact5();
-                String ftaco6=arrayList.get(position).getFact6();
-                String ftaco7=arrayList.get(position).getFact7();
-                String ftaco8=arrayList.get(position).getFact8();
-                String ftaco9=arrayList.get(position).getFact9();
-                String ftaco10=arrayList.get(position).getFact10();
+                String Monumentname = arrayList.get(position).getName();
+                String lati = arrayList.get(position).getLatitude();
+                String loni = arrayList.get(position).getLongitude();
+                String descrip = arrayList.get(position).getDescription();
+                String photo = arrayList.get(position).getPhoto();
+                String rat = arrayList.get(position).getRating();
+                String ftaco1 = arrayList.get(position).getFact1();
+                String ftaco2 = arrayList.get(position).getFact2();
+                String ftaco3 = arrayList.get(position).getFact3();
+                String ftaco4 = arrayList.get(position).getFact4();
+                String ftaco5 = arrayList.get(position).getFact5();
+                String ftaco6 = arrayList.get(position).getFact6();
+                String ftaco7 = arrayList.get(position).getFact7();
+                String ftaco8 = arrayList.get(position).getFact8();
+                String ftaco9 = arrayList.get(position).getFact9();
+                String ftaco10 = arrayList.get(position).getFact10();
 
 
-                Bundle bundle=new Bundle();
-                bundle.putString("monumentName",Monumentname);
-                bundle.putString("latitude",lati);
-                bundle.putString("longitude",loni);
-                bundle.putString("description",descrip);
-                bundle.putString("photoUrl",photo);
-                bundle.putString("rating",rat);
-                bundle.putString("fact1",ftaco1);
-                bundle.putString("fact2",ftaco2);
-                bundle.putString("fact3",ftaco3);
-                bundle.putString("fact4",ftaco4);
-                bundle.putString("fact5",ftaco5);
-                bundle.putString("fact6",ftaco6);
-                bundle.putString("fact7",ftaco7);
-                bundle.putString("fact8",ftaco8);
-                bundle.putString("fact9",ftaco9);
-                bundle.putString("fact10",ftaco10);
-
+                Bundle bundle = new Bundle();
+                bundle.putString("monumentName", Monumentname);
+                bundle.putString("latitude", lati);
+                bundle.putString("longitude", loni);
+                bundle.putString("description", descrip);
+                bundle.putString("photoUrl", photo);
+                bundle.putString("rating", rat);
+                bundle.putString("fact1", ftaco1);
+                bundle.putString("fact2", ftaco2);
+                bundle.putString("fact3", ftaco3);
+                bundle.putString("fact4", ftaco4);
+                bundle.putString("fact5", ftaco5);
+                bundle.putString("fact6", ftaco6);
+                bundle.putString("fact7", ftaco7);
+                bundle.putString("fact8", ftaco8);
+                bundle.putString("fact9", ftaco9);
+                bundle.putString("fact10", ftaco10);
 
 
                 Intent intent = new Intent(mContext, MonumentDescription.class);
-mContext.startActivity(intent);
+                mContext.startActivity(intent);
 
 //                TODO :  add code to show the bottomsheet here and networking ka code bhi idhr hi ayega wo main kr dunga bad mein
             }
@@ -99,6 +96,11 @@ mContext.startActivity(intent);
         holder.monumentNameTextView.setText(arrayList.get(position).getName());
         holder.monumentRatingBar.setNumStars(Integer.parseInt(arrayList.get(position).getRating()));
         holder.monumentDescriptionTextView.setText(arrayList.get(position).getDescription());
+
+        Glide.with(mContext)
+                .asBitmap()
+                .load(arrayList.get(position).getPhoto().toString())
+                .into(holder.monumentCircleImageView);
 //        holder.monumentCircleImageView.setText(arrayList.get(position).getMonumentVisits());
 //        holder.monumentVisitsTextView.setText(arrayList.get(position).getMonumentVisits());TODO: Calculate the distance from current loc
 
